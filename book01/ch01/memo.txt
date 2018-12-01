@@ -11,3 +11,7 @@ $ ansible myserver -i hosts -m ping
 python3の指定をhostsに書かないときはコマンドラインのパラメタで指定する
 
 $ ansible myserver -i hosts -m ping -e 'ansible_python_interpreter=/usr/bin/python3'
+
+## ansible.cfgを書く
+
+hostnameオプションは非推奨なので、inventoryを使う
