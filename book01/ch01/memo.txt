@@ -15,3 +15,14 @@ $ ansible myserver -i hosts -m ping -e 'ansible_python_interpreter=/usr/bin/pyth
 ## ansible.cfgを書く
 
 hostnameオプションは非推奨なので、inventoryを使う
+
+## いろいろコマンドを実行してみる
+
+$ ansible myserver -m ping
+$ ansible myserver -m command -a uptime
+$ ansible myserver -a "tail /var/log/dmesg" # ファイルが見つからない
+$ ansible myserver -b -a "tail /var/log/syslog"
+
+sudoになる-sオプションは-bに変更になった
+
+$ ansible myserver -b -m apt -a name=nginx
