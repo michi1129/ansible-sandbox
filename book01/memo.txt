@@ -1,6 +1,8 @@
-# 1章
+# 初めてのAnsible
 
-## hostsファイルを書く
+## 1章
+
+### hostsファイルを書く
 
 ```hosts
 myserver ansible_ssh_host=127.0.0.1 ansible_ssh_port=2222 ansible_ssh_user=vagrant ansible_ssh_private_key_file=.vagrant/machines/default/virtualbox/private_key ansible_python_interpreter=/usr/bin/python3
@@ -12,11 +14,11 @@ python3の指定をhostsに書かないときはコマンドラインのパラ�
 
 $ ansible myserver -i hosts -m ping -e 'ansible_python_interpreter=/usr/bin/python3'
 
-## ansible.cfgを書く
+### ansible.cfgを書く
 
 hostnameオプションは非推奨なので、inventoryを使う
 
-## いろいろコマンドを実行してみる
+### いろいろコマンドを実行してみる
 
 $ ansible myserver -m ping
 $ ansible myserver -m command -a uptime
