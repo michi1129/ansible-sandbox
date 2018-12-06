@@ -1,0 +1,4 @@
+ubuntu-*-console.log
+*.retry
+.vagrant/
+
