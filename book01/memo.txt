@@ -28,3 +28,13 @@ $ ansible myserver -b -a "tail /var/log/syslog"
 sudoになる-sオプションは-bに変更になった
 
 $ ansible myserver -b -m apt -a name=nginx
+
+# 2章
+
+### vagrantを同じディレクトリで動かすようにした
+
+### httpでwebサーバをセットアップする
+
+web-notls.yml
+
+
