@@ -1,4 +1,13 @@
+# vagrant関係のファイル
 ubuntu-*-console.log
-*.retry
 .vagrant/
 
+# ansibleの自動生成ファイル
+*.retry
+
+# nginxの設定ファイル
+nginx.crt
+nginx.key
+
+# vimのやつ
+*.swp
