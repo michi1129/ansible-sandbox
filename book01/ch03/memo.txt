@@ -1,0 +1,18 @@
+# 初めてのAnsible
+
+## 3章
+
+### 複数環境をまとめて立ち上げる
+
+立ち上げたあとの接続確認
+NICの情報を表示する
+ただし、本に記載のあるeth0では取得できなかった
+一旦vagrant sshで入ってみてifconfigでどんなNICがあるのかを参照してから
+コマンドに指定してみたらうまくいった
+
+$ ansible vag2 -a "ip addr show dev enp0s3"
+
+複数環境でまとめてコマンドを実行する
+
+$ ansible all -a "date"
+$ ansible '*' -a "date"
