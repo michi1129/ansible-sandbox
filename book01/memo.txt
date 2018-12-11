@@ -37,4 +37,14 @@ $ ansible myserver -b -m apt -a name=nginx
 
 web-notls.yml
 
+### httpsでwebサーバを動かす
 
+オレオレ証明書を生成する
+
+$ openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -subj /CN=localhost -keyout files/nginx.key -out files/nginx.crt
+
+daysパラメタで有効期間を絞れる
+
+web-tls.yml
+
+なんかエラー出たら、confファイルのテストが通るか確認してみること
