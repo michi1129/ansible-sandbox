@@ -4,7 +4,12 @@
     - variables.yml
 
   tasks:
-    - debug: var=key_file
-    - debug: var=cert_file
-    - debug: var=conf_file
-    - debug: var=server_name
+    # - name: capture output of whoami command
+    #   command: whoami
+    #   register: login
+    
+    - name: capture output of id command
+      command: id -un
+      register: login
+    - debug: var=login
+    - debug: msg="Logged in as user {{ login.stdout }}"
