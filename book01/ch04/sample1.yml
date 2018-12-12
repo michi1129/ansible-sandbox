@@ -1,0 +1,10 @@
+- name: sample variable definitions outside of yaml
+  hosts: vag1
+  vars_files:
+    - variables.yml
+
+  tasks:
+    - debug: var=key_file
+    - debug: var=cert_file
+    - debug: var=conf_file
+    - debug: var=server_name

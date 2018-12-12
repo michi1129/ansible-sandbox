@@ -65,3 +65,8 @@ $ ansible vag2 -a "ip addr show dev enp0s3"
 
 $ ansible all -a "date"
 $ ansible '*' -a "date"
+
+## 4章
+
+変数をplaybookに直接記入するのではなく、外のファイルに記入するようにして、
+playbookからはそれを参照するようにした
