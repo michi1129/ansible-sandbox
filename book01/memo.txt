@@ -29,7 +29,7 @@ sudoになる-sオプションは-bに変更になった
 
 $ ansible myserver -b -m apt -a name=nginx
 
-# 2章
+## 2章
 
 ### vagrantを同じディレクトリで動かすようにした
 
@@ -48,3 +48,20 @@ daysパラメタで有効期間を絞れる
 web-tls.yml
 
 なんかエラー出たら、confファイルのテストが通るか確認してみること
+
+## 3章
+
+### 複数環境をまとめて立ち上げる
+
+立ち上げたあとの接続確認
+NICの情報を表示する
+ただし、本に記載のあるeth0では取得できなかった
+一旦vagrant sshで入ってみてifconfigでどんなNICがあるのかを参照してから
+コマンドに指定してみたらうまくいった
+
+$ ansible vag2 -a "ip addr show dev enp0s3"
+
+複数環境でまとめてコマンドを実行する
+
+$ ansible all -a "date"
+$ ansible '*' -a "date"
