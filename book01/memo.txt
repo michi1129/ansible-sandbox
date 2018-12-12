@@ -84,3 +84,10 @@ $ ansible server1 -m setup
 グロブも使える。
 本ではeth*の指定になっていたが、NICの名前が違っててそれでは取れない。
 $ ansible server2 -m setup -a 'filter=ansible_e*'
+
+サーバの /etc/ansible/facts.d/example.fact に、この内容のファイルをおいておくと
+ansible_localという変数で参照することができる
+[book]
+title=Ansible: Up and Running
+author=Lorin Hochstein
+publisher=O'Reilly Media
