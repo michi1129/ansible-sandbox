@@ -13,3 +13,9 @@
       register: login
     - debug: var=login
     - debug: msg="Logged in as user {{ login.stdout }}"
+
+    - name: Run myprog
+      command: /opt/myprog
+      register: result
+      ignore_errors: True
+    - debug: var=result
